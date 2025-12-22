@@ -8,8 +8,8 @@ test:
 			--headless \
 			-u tests/init.vim \
 			-c "Assert runall ./tests" \
+			-c "echo ''" \
 			-c "quit"
-	@echo
 	@echo "running vim tests"
 	@nix develop --option warn-dirty false \
 		--command vim \
@@ -18,4 +18,5 @@ test:
 			-V1 \
 			-u tests/init.vim \
 			-c "Assert runall ./tests" \
+			-c "echo ''" \
 			-c "quit"
