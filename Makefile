@@ -2,8 +2,8 @@
 .PHONY: test
 test:
 	@echo "running neovim tests"
-	@nix develop --command \
-		nvim \
+	@nix develop --option warn-dirty false \
+		--command nvim \
 			--noplugin \
 			--headless \
 			-u tests/init.vim \
@@ -11,8 +11,8 @@ test:
 			-c "quit"
 	@echo
 	@echo "running vim tests"
-	@nix develop --command \
-		vim \
+	@nix develop --option warn-dirty false \
+		--command vim \
 			--noplugin \
 			-es \
 			-V1 \
