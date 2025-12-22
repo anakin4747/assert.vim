@@ -16,3 +16,13 @@ Vimscript test framework
 - a way to rerun only failed tests
 
 - a way to run individual tests not just one file of tests
+
+Vimscript exceptions and info:
+
+Variables:
+- v:exception
+    - most recent exception caught and not finished
+- v:stacktrace
+- v:throwpoint
+- v:errmsg
+- v:errors
