@@ -2,6 +2,8 @@
 
 vim \
     --noplugin \
+    -N \
+    -i NONE \
     -es \
     -V1 \
     -u tests/init.vim \
