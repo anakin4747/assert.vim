@@ -1,0 +1,7 @@
+#!/bin/bash
+
+nvim \
+    --noplugin \
+    --headless \
+    -u tests/init.vim \
+    -c "Assert runall"

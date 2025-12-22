@@ -1,0 +1,8 @@
+#!/bin/bash
+
+vim \
+    --noplugin \
+    -es \
+    -V1 \
+    -u tests/init.vim \
+    -c "Assert runall"

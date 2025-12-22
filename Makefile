@@ -1,22 +1,9 @@
 
+.PHONY: nix
+nix:
+	nix develop --command make test
+
 .PHONY: test
 test:
-	@echo "running neovim tests"
-	@nix develop --option warn-dirty false \
-		--command nvim \
-			--noplugin \
-			--headless \
-			-u tests/init.vim \
-			-c "Assert runall ./tests" \
-			-c "echo ''" \
-			-c "quit"
-	@echo "running vim tests"
-	@nix develop --option warn-dirty false \
-		--command vim \
-			--noplugin \
-			-es \
-			-V1 \
-			-u tests/init.vim \
-			-c "Assert runall ./tests" \
-			-c "echo ''" \
-			-c "quit"
+	./tests/runall_nvim
+	./tests/runall_vim
