@@ -1,0 +1,10 @@
+#!/bin/bash
+
+NVIM_ARGS=(--headless)
+VIM_ARGS=(-N -i NONE -es -V1)
+ARGS=(--noplugin -u tests/init.vim)
+
+CMD="${1:-Assert runall}"
+
+nvim "${NVIM_ARGS[@]}" "${ARGS[@]}" -c "$CMD"
+vim  "${VIM_ARGS[@]}"  "${ARGS[@]}" -c "$CMD"
